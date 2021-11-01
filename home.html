@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>Cat Family</title>
+</head>
+
+<body>
+    <h1>Let's Build A Family!</h1>
+    <h2>Random Cat Generator</h2>
+    <div class="button">
+        <button id="button" onclick="randomImg()" value="Show Me!">Show Me!</button>
+    </div>
+    <p id="name"></p>
+    <div class="image">
+        <img id="imageid" src="" />
+    </div>
+
+    <script type="text/javascript">
+
+        document.getElementById("button").addEventListener("click", randomImg)
+        function randomImg() {
+            //array to store names
+            var array = [
+
+                "Bella",
+                "Edward",
+                "Socks",
+                "Peanut",
+                "Princess"];
+
+            var randInt = array[Math.floor(Math.random() * array.length)];
+            //choose image from folder
+            var randomNumber = Math.floor(Math.random() * 5) + 1;
+            var imgName = "img" + randomNumber + ".jpg";
+
+            document.getElementById("imageid").src = imgName;
+            document.getElementById("name").innerHTML = randInt;
+
+
+        }
+
+    </script>
+</body>
+</html>
